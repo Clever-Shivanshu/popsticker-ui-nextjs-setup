@@ -48,6 +48,7 @@ import {
   TooltipProvider
 } from "@popsticker/ui";
 import { Playground } from "@/components/Playground";
+import { Installation } from "@/components/Installation"; 
 import { ArrowRight, Github, Package, Zap, Layout, Star } from "lucide-react";
 
 export default function LandingPage() {
@@ -72,7 +73,7 @@ export default function LandingPage() {
       {/* Hero Section */}
       <section className="py-20 px-4 text-center space-y-8 max-w-4xl mx-auto">
         <Badge className="animate-bounce-in bg-popsticker-purple text-white hover:bg-popsticker-purple/90">
-          v0.1.6 is now live! 🚀
+          v0.1.7 is now live! 🚀
         </Badge>
 
         <h1 className="text-6xl md:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
@@ -140,6 +141,8 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+
+      <Installation />
 
       {/* Playground Section */}
       <section className="py-20 max-w-7xl mx-auto px-4 space-y-16">
