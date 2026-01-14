@@ -49,6 +49,7 @@ import {
 } from "@popsticker/ui";
 import { Playground } from "@/components/Playground";
 import { Installation } from "@/components/Installation"; 
+import { HeroSection } from "@/components/hero";
 import { ArrowRight, Github, Package, Zap, Layout, Star } from "lucide-react";
 
 export default function LandingPage() {
@@ -70,77 +71,7 @@ export default function LandingPage() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="py-20 px-4 text-center space-y-8 max-w-4xl mx-auto">
-        <Badge className="animate-bounce-in bg-popsticker-purple text-white hover:bg-popsticker-purple/90">
-          v0.1.7 is now live! 🚀
-        </Badge>
-
-        <h1 className="text-6xl md:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
-          Make your UI <br />
-          <span className="text-popsticker-lime bg-black px-4 transform -rotate-2 inline-block mt-2">
-            POP!
-          </span>
-        </h1>
-
-        <p className="text-xl text-slate-600 max-w-2xl mx-auto font-medium">
-          A React component library with bold borders, bright colors, and playful animations.
-          Built on Radix UI and Tailwind CSS.
-        </p>
-
-        <div className="flex flex-wrap gap-4 justify-center pt-4">
-          {/* <Button size="lg" className="text-lg px-8 hover:animate-shake">
-            Get Started <ArrowRight className="ml-2 w-5 h-5" />
-          </Button> */}
-          <Button size="lg" variant="outline" className="text-lg px-8 bg-white">
-            npm install @popsticker/ui
-          </Button>
-        </div>
-
-        <div className="max-w-2xl mx-auto pt-8">
-          <Alert className="bg-yellow-100 border-yellow-500 text-left">
-            <AlertTitle className="font-bold text-yellow-800">Important Note</AlertTitle>
-            <AlertDescription className="text-yellow-800">
-              This library supports and works in client components only. Please add <code>"use client"</code> at the top of your file.
-            </AlertDescription>
-          </Alert>
-        </div>
-      </section>
-
-      {/* Features Grid */}
-      <section className="py-20 bg-white border-y-3 border-black">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-popsticker-lime/20 border-popsticker-lime">
-              <CardHeader>
-                <Zap className="w-10 h-10 mb-2" />
-                <CardTitle>Bold Design</CardTitle>
-              </CardHeader>
-              <CardContent>
-                Thick borders, offset shadows, and vibrant colors that stand out from the crowd.
-              </CardContent>
-            </Card>
-            <Card className="bg-popsticker-purple/20 border-popsticker-purple">
-              <CardHeader>
-                <Layout className="w-10 h-10 mb-2" />
-                <CardTitle>35+ Components</CardTitle>
-              </CardHeader>
-              <CardContent>
-                Everything you need from Buttons to Dialogs, fully accessible and typed.
-              </CardContent>
-            </Card>
-            <Card className="bg-popsticker-orange/20 border-popsticker-orange">
-              <CardHeader>
-                <Star className="w-10 h-10 mb-2" />
-                <CardTitle>Animations</CardTitle>
-              </CardHeader>
-              <CardContent>
-                Built-in wiggles, bounces, and shakes to bring your interface to life.
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       <Installation />
 
