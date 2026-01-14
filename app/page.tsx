@@ -61,10 +61,10 @@ export default function LandingPage() {
             <span className="text-xl font-extrabold">PopSticker</span>
           </div>
           <div className="flex gap-4">
-            <Button variant="ghost" size="sm">Docs</Button>
-            <Button variant="default" size="sm" className="gap-2">
+            {/* <Button variant="ghost" size="sm">Docs</Button> */}
+            {/* <Button variant="default" size="sm" className="gap-2" >
               <Github className="w-4 h-4" /> GitHub
-            </Button>
+            </Button> */}
           </div>
         </div>
       </nav>
@@ -88,9 +88,9 @@ export default function LandingPage() {
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center pt-4">
-          <Button size="lg" className="text-lg px-8 hover:animate-shake">
+          {/* <Button size="lg" className="text-lg px-8 hover:animate-shake">
             Get Started <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
+          </Button> */}
           <Button size="lg" variant="outline" className="text-lg px-8 bg-white">
             npm install @popsticker/ui
           </Button>
