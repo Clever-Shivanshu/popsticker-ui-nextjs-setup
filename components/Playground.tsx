@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent, Button, Badge, Tabs, TabsList, TabsTrigger } from "@popsticker/ui";
+import { Card, Button, Badge, Tabs, TabsList, TabsTrigger } from "@popsticker/ui";
 import { Code, Eye, Copy, Check, Sparkles } from "lucide-react";
 
 interface PlaygroundProps {
@@ -21,11 +21,6 @@ export function Playground({ title, description, code, children, badge }: Playgr
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
-
-  // Extract the component name from the code for a fun badge
-  const componentName = code.includes("export default function") 
-    ? code.match(/export default function (\w+)/)?.[1] || "Component"
-    : "Example";
 
   return (
     <div className="space-y-6 group">
@@ -49,9 +44,6 @@ export function Playground({ title, description, code, children, badge }: Playgr
         
         {/* Component Badge */}
         <div className="flex items-center gap-2">
-          <div className="px-3 py-1 bg-slate-100 border-2 border-slate-300 rounded-full text-sm font-mono">
-            {componentName}
-          </div>
           <Sparkles className="w-5 h-5 text-popsticker-orange animate-pulse" />
         </div>
       </div>
@@ -89,17 +81,13 @@ export function Playground({ title, description, code, children, badge }: Playgr
       </div>
 
       {/* Main Card */}
-      <Card className="overflow-hidden border-3 border-black shadow-sticker-lg hover:shadow-sticker-xl transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] bg-gradient-to-br from-white to-slate-50">
+      <Card className="overflow-hidden border-3 border-black shadow-sticker-lg hover:shadow-sticker-xl transition-all duration-300 bg-white">
         {/* Preview Section */}
         {activeTab === "preview" && (
           <div className="p-8 md:p-12">
             <div className="relative">
-              {/* Decorative Elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-popsticker-lime/20 rounded-full blur-xl" />
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-popsticker-purple/20 rounded-full blur-xl" />
-              
               {/* Preview Content */}
-              <div className="relative bg-white/80 backdrop-blur-sm border-2 border-slate-200 rounded-xl p-6 min-h-[300px] flex items-center justify-center">
+              <div className="bg-white border-2 border-slate-200 rounded-xl p-6 min-h-[300px] flex items-center justify-center">
                 <div className="w-full max-w-3xl mx-auto">
                   {children}
                 </div>
@@ -107,7 +95,7 @@ export function Playground({ title, description, code, children, badge }: Playgr
               
               {/* Corner Badge */}
               <div className="absolute -top-3 -left-3">
-                <Badge className="bg-popsticker-orange text-white border-2 border-black animate-wiggle">
+                <Badge className="bg-popsticker-orange text-white border-2 border-black">
                   Live Preview
                 </Badge>
               </div>
@@ -127,7 +115,7 @@ export function Playground({ title, description, code, children, badge }: Playgr
                   <div className="w-3 h-3 rounded-full bg-green-500" />
                 </div>
                 <span className="text-slate-400 font-mono text-sm">
-                  {componentName.toLowerCase()}.tsx
+                  example.tsx
                 </span>
               </div>
               
@@ -152,31 +140,11 @@ export function Playground({ title, description, code, children, badge }: Playgr
               <div className="pl-16 pr-6 py-6 overflow-auto max-h-[500px]">
                 <pre className="font-mono text-sm leading-relaxed">
                   <code className="text-slate-100">
-                    {code.split('\n').map((line, i) => {
-                      // Syntax highlighting
-                      let className = "";
-                      if (line.includes("import")) className = "text-blue-400";
-                      else if (line.includes("export") || line.includes("function") || line.includes("return")) 
-                        className = "text-purple-400";
-                      else if (line.includes("use client") || line.includes("className")) 
-                        className = "text-green-400";
-                      else if (line.includes("<") && line.includes(">")) 
-                        className = "text-yellow-300";
-                      else if (line.includes('"') || line.includes("'") || line.includes("`")) 
-                        className = "text-orange-300";
-                      
-                      return (
-                        <div key={i} className="group/line hover:bg-slate-800/50 px-2 rounded">
-                          <span className={className}>{line}</span>
-                          <button
-                            onClick={() => navigator.clipboard.writeText(line.trim())}
-                            className="ml-2 opacity-0 group-hover/line:opacity-100 transition-opacity text-slate-500 hover:text-white"
-                          >
-                            <Copy className="w-3 h-3" />
-                          </button>
-                        </div>
-                      );
-                    })}
+                    {code.split('\n').map((line, i) => (
+                      <div key={i} className="group/line hover:bg-slate-800/50 px-2 rounded">
+                        <span>{line}</span>
+                      </div>
+                    ))}
                   </code>
                 </pre>
               </div>
@@ -187,17 +155,17 @@ export function Playground({ title, description, code, children, badge }: Playgr
               variant="default"
               size="sm"
               onClick={handleCopy}
-              className="absolute bottom-6 right-6 bg-popsticker-lime text-black border-2 border-black hover:bg-popsticker-lime/90 hover:animate-bounce"
+              className="absolute bottom-6 right-6 bg-popsticker-lime text-black border-2 border-black hover:bg-popsticker-lime/90"
             >
               {copied ? (
                 <>
                   <Check className="w-4 h-4 mr-2" />
-                  Code Copied!
+                  Copied!
                 </>
               ) : (
                 <>
                   <Copy className="w-4 h-4 mr-2" />
-                  Copy All Code
+                  Copy Code
                 </>
               )}
             </Button>
@@ -211,43 +179,9 @@ export function Playground({ title, description, code, children, badge }: Playgr
       {/* Helper Text */}
       <div className="flex items-center justify-center gap-2 text-slate-500 text-sm">
         <Eye className="w-4 h-4" />
-        <span>Click the tabs above to switch between preview and code</span>
+        <span>Click tabs to switch between preview and code</span>
         <Code className="w-4 h-4" />
       </div>
     </div>
   );
-}                    >
-                        {showCode ? <Eye className="w-4 h-4" /> : <Code className="w-4 h-4" />}
-                        {showCode ? "Preview" : "View Code"}
-                    </Button>
-                </div>
-            </div>
-
-            <Card className="overflow-hidden border-3 border-black shadow-sticker bg-white">
-                <div className="grid md:grid-cols-1 lg:grid-cols-2">
-                    {/* Preview Area */}
-                    <div className={`p-8 flex items-center justify-center bg-slate-50 border-b-3 md:border-b-0 md:border-r-3 border-black min-h-[300px] ${showCode ? 'hidden lg:flex' : 'flex'}`}>
-                        {children}
-                    </div>
-
-                    {/* Code Area */}
-                    <div className={`bg-slate-900 relative ${showCode ? 'block' : 'hidden lg:block'}`}>
-                        <div className="absolute top-4 right-4 z-10">
-                            <button
-                                onClick={handleCopy}
-                                className="p-2 rounded-md hover:bg-slate-800 text-slate-400 hover:text-white transition-colors"
-                            >
-                                {copied ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
-                            </button>
-                        </div>
-                        <div className="h-full max-h-[400px] overflow-auto p-6 font-mono text-sm">
-                            <pre className="text-blue-300">
-                                <code>{code}</code>
-                            </pre>
-                        </div>
-                    </div>
-                </div>
-            </Card>
-        </div>
-    );
 }
