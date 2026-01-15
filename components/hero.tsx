@@ -56,7 +56,7 @@ export default function HeroSection() {
                 <span className="text-popsticker-lime bg-black px-6 py-3 transform rotate-[-3deg] inline-block border-4 border-white shadow-sticker-lg hover:rotate-0 transition-transform duration-300">
                   POP!
                 </span>
-                <Sparkles className="absolute -top-4 -right-4 w-10 h-10 text-yellow-400 animate-spin" />
+              
               </span>
             </h1>
 
@@ -111,7 +111,7 @@ export default function HeroSection() {
               </div>
             </Button>
 
-            <Button
+            {/* <Button
               size="lg"  // Changed from "xl" to "lg"
               variant="outline"
               className="text-xl px-10 py-6 border-4 border-black bg-white hover:bg-popsticker-lime/10 hover:animate-shake"
@@ -120,7 +120,7 @@ export default function HeroSection() {
                 <Star className="w-6 h-6" />
                 <span>View Components</span>
               </div>
-            </Button>
+            </Button> */}
           </div>
 
           {/* GitHub Button */}
@@ -182,7 +182,7 @@ export default function HeroSection() {
       </div>
 
       {/* Scrolling Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 mt-10">
         <div className="flex flex-col items-center gap-2 animate-bounce">
           <div className="text-sm text-slate-500 font-medium">Scroll to explore</div>
           <div className="w-6 h-10 border-3 border-black rounded-full flex justify-center">
