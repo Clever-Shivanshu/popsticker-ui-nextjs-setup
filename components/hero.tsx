@@ -36,7 +36,7 @@ export default function HeroSection() {
             <Badge className="bg-black text-white border-2 border-white text-lg px-6 py-3 hover:animate-spin cursor-pointer transform transition-all duration-300 hover:scale-110">
               <div className="flex items-center gap-2">
                 <Rocket className="w-5 h-5" />
-                <span>v0.1.6 is now live!</span>
+                <span>v0.1.7 is now live!</span>
                 <Zap className="w-5 h-5 text-popsticker-lime" />
               </div>
             </Badge>
@@ -47,7 +47,7 @@ export default function HeroSection() {
             <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9]">
               <span className="relative inline-block">
                 <span className="text-slate-900">Make Your</span>
-                <span className="absolute -top-2 -right-4 text-3xl md:text-4xl bg-popsticker-purple text-white px-3 py-1 rounded-full rotate-12 border-2 border-black">
+                <span className=" text-popsticker-purple">
                   UI
                 </span>
               </span>
@@ -62,11 +62,11 @@ export default function HeroSection() {
 
             {/* Floating Stickers */}
             <div className="absolute -top-6 left-10 md:left-20">
-              <div className="w-16 h-16 bg-white border-3 border-black rounded-2xl rotate-12 shadow-sticker animate-wiggle">
+              {/* <div className="w-16 h-16 bg-white border-3 border-black rounded-2xl rotate-12 shadow-sticker animate-wiggle">
                 <div className="flex items-center justify-center h-full">
                   <Palette className="w-8 h-8 text-popsticker-purple" />
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="absolute -bottom-6 right-10 md:right-20">
               <div className="w-20 h-20 bg-popsticker-orange border-3 border-black rounded-full rotate-[-8deg] shadow-sticker animate-wiggle delay-300">
@@ -182,14 +182,14 @@ export default function HeroSection() {
       </div>
 
       {/* Scrolling Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 mt-10">
+      {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 mt-10">
         <div className="flex flex-col items-center gap-2 animate-bounce">
           <div className="text-sm text-slate-500 font-medium">Scroll to explore</div>
           <div className="w-6 h-10 border-3 border-black rounded-full flex justify-center">
             <div className="w-2 h-2 bg-black rounded-full mt-2 animate-pulse" />
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
