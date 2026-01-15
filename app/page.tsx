@@ -49,7 +49,7 @@ import {
 } from "@popsticker/ui";
 import { Playground } from "@/components/Playground";
 import { Installation } from "@/components/Installation"; 
-import { HeroSection } from "@/components/hero";
+import HeroSection from "@/components/hero";
 import { ArrowRight, Github, Package, Zap, Layout, Star } from "lucide-react";
 
 export default function LandingPage() {
