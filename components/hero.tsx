@@ -1,7 +1,7 @@
 "use client";
 
 import { Button, Badge, Alert, AlertTitle, AlertDescription } from "@popsticker/ui";
-import { Github, Rocket, Sparkles, Palette, Zap, Package, Star } from "lucide-react";
+import { Github, Rocket, Sparkles, Palette, Zap, Package, Star, Copy, Check } from "lucide-react";
 import { useState } from "react";
 
 export default function HeroSection() {
@@ -36,7 +36,7 @@ export default function HeroSection() {
             <Badge className="bg-black text-white border-2 border-white text-lg px-6 py-3 hover:animate-spin cursor-pointer transform transition-all duration-300 hover:scale-110">
               <div className="flex items-center gap-2">
                 <Rocket className="w-5 h-5" />
-                <span>v0.1.7 is now live!</span>
+                <span>v0.1.6 is now live!</span>
                 <Zap className="w-5 h-5 text-popsticker-lime" />
               </div>
             </Badge>
@@ -91,7 +91,7 @@ export default function HeroSection() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
             <Button
-              size="xl"
+              size="lg"  // Changed from "xl" to "lg" (available size)
               className="text-xl px-10 py-6 border-4 border-black shadow-sticker-lg hover:shadow-sticker-xl hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-300 group"
               onClick={handleCopy}
             >
@@ -100,6 +100,7 @@ export default function HeroSection() {
                 <span className="font-mono">npm install @popsticker/ui</span>
                 {copied ? (
                   <Badge className="bg-green-500 text-white ml-2 animate-bounce-in">
+                    <Check className="w-4 h-4 mr-1" />
                     Copied!
                   </Badge>
                 ) : (
@@ -111,7 +112,7 @@ export default function HeroSection() {
             </Button>
 
             <Button
-              size="xl"
+              size="lg"  // Changed from "xl" to "lg"
               variant="outline"
               className="text-xl px-10 py-6 border-4 border-black bg-white hover:bg-popsticker-lime/10 hover:animate-shake"
             >
@@ -191,4 +192,4 @@ export default function HeroSection() {
       </div>
     </div>
   );
-        }
+}
