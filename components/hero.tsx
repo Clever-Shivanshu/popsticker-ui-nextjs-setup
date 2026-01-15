@@ -149,10 +149,11 @@ export default function HeroSection() {
             <div className="text-4xl font-black text-popsticker-purple">100%</div>
             <div className="text-slate-600 mt-2">Accessible</div>
           </div>
+          {/*
           <div className="text-center p-6 bg-white border-3 border-black rounded-2xl shadow-sticker hover:translate-y-[-4px] transition-transform">
             <div className="text-4xl font-black text-popsticker-orange">0</div>
             <div className="text-slate-600 mt-2">Dependencies</div>
-          </div>
+          </div>*/}
           <div className="text-center p-6 bg-white border-3 border-black rounded-2xl shadow-sticker hover:translate-y-[-4px] transition-transform">
             <div className="text-4xl font-black text-black">∞</div>
             <div className="text-slate-600 mt-2">Customizable</div>
