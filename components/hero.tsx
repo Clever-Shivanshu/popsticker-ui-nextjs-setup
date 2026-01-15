@@ -124,7 +124,7 @@ export default function HeroSection() {
           </div>
 
           {/* GitHub Button */}
-          <div className="pt-4">
+          {/* <div className="pt-4">
             <Button
               variant="ghost"
               size="lg"
@@ -136,7 +136,7 @@ export default function HeroSection() {
                 <Badge className="bg-slate-900 text-white">1.2k ★</Badge>
               </div>
             </Button>
-          </div>
+          </div> */}
         </div>
 
         {/* Stats */}
